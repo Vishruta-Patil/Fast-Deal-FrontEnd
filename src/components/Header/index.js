@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         ) : (
           <div
-            className="flex-column flex-center secondary-color"
+            className="flex-column flex-center secondary-color text-center"
             onClick={logOutHandler}
           >
             <span className="material-icons icon"> logout</span>

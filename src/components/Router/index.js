@@ -1,7 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AdminPage } from "../../pages/admin";
 import Login from "../../pages/auth/login";
-import { UserPage } from "../../pages/user";
+import { UserPage } from "../../pages/user/Home";
+// import { UserPage } from "../../pages/user";
+import { UserTransaction } from "../../pages/user/Transaction";
+import { UserTransfer } from "../../pages/user/Transfer";
 
 export const Router = () => {
   const useAuth = () => {
@@ -25,6 +28,25 @@ export const Router = () => {
           </PrivateRoute>
         }
       />
+
+      <Route
+        path="/user/transaction"
+        element={
+          <PrivateRoute>
+            <UserTransaction />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/user/transfer"
+        element={
+          <PrivateRoute>
+            <UserTransfer />
+          </PrivateRoute>
+        }
+      />
+
       <Route
         path="/admin"
         element={

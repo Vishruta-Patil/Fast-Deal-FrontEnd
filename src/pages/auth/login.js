@@ -19,7 +19,7 @@ const userType = localStorage.getItem("userType")
 
 
   return (
-    <div className="h-screen ">
+    <div className="h-screen text-center">
     <section className="">
       <Header />
       <div className="flex flex-col max-w-3xl mx-5 md:mx-auto mt-20 shadow-2xl dark:border-white-neutral dark:border bg-white-neutral dark:bg-dark-background-color">

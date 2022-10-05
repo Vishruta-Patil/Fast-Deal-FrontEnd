@@ -1,4 +1,4 @@
-import { GET_LOGIN_STATUS, GET_TOKEN, GET_USER_TYPE } from "./authConstant";
+import { GET_LOGIN_STATUS, GET_TOKEN, GET_USER_DETAILS, GET_USER_TYPE } from "./authConstant";
 
 export const authReducer = (state, action) => {
     switch(action.type) {
@@ -16,6 +16,11 @@ export const authReducer = (state, action) => {
             return {
                 ...state,
                 token: action.payload
+            }
+        case GET_USER_DETAILS:
+            return {
+                ...state,
+                userDetails: action.payload
             }
     }
 }

@@ -1,6 +1,13 @@
-import { GET_LOGIN_STATUS, GET_USER_TYPE } from "../reducer/auth/authConstant";
+import { GET_LOGIN_STATUS, GET_USER_DETAILS, GET_USER_TYPE } from "../reducer/auth/authConstant";
 import { toast } from "react-toastify";
 import axios from 'axios'
+
+const logOutHandler = (dispatch, navigate) => {
+  localStorage.clear()
+  dispatch({ type: GET_LOGIN_STATUS });
+navigate("/");
+toast.success("Logged out Sucessfully!");
+}
 
 export const login = async (credentials, dispatch, navigate) => {
     try {
@@ -15,8 +22,8 @@ export const login = async (credentials, dispatch, navigate) => {
       
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("userType", userType);
+      localStorage.setItem("accountNo", response.data.user[0].accountNo)
       dispatch({ type: GET_LOGIN_STATUS });
-      dispatch({type: GET_USER_TYPE, payload: userType})
 
       if(userType === "user") {
         navigate("/user")
