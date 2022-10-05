@@ -55,12 +55,21 @@ export const CreditDebitForm = () => {
       </div>
 
       <HeroBtn
-        classnames="mt-5 font-semibold"
+        classnames="mt-5 font-semibold mr-5"
         eventHandler={() =>
           transferAmount(userAccountNo, accountNo, amount, userDispatch)
         }
       >
-        Transfer
+        Deposit (Credit)
+      </HeroBtn>
+
+      <HeroBtn
+        classnames="mt-5 font-semibold mr-5"
+        eventHandler={() =>
+          transferAmount(accountNo, userAccountNo, amount, userDispatch)
+        }
+      >
+        Withdraw (Debit)
       </HeroBtn>
     </div>
   );
