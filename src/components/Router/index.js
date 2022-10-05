@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { AdminPage } from "../../pages/admin";
+import { CreditDebitAdmin } from "../../pages/admin/CreditDebit";
+import { AdminPage } from "../../pages/admin/Home";
+import { AdminUserList } from "../../pages/admin/Users";
 import Login from "../../pages/auth/login";
 import { UserPage } from "../../pages/user/Home";
-// import { UserPage } from "../../pages/user";
 import { UserTransaction } from "../../pages/user/Transaction";
 import { UserTransfer } from "../../pages/user/Transfer";
 
@@ -52,6 +53,24 @@ export const Router = () => {
         element={
           <PrivateRoute>
             <AdminPage />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/admin/userlist"
+        element={
+          <PrivateRoute>
+            <AdminUserList />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/admin/transfer"
+        element={
+          <PrivateRoute>
+            <CreditDebitAdmin />
           </PrivateRoute>
         }
       />
